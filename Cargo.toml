@@ -1,6 +1,6 @@
 [package]
 name = "grammarbot"
-version = "0.1.0"
+version = "0.1.1"
 description = "API bindings for grammarbot.io"
 authors = ["Oleksii Filonenko <brightone@protonmail.com>"]
 homepage = "https://github.com/filalex77/grammarbot-rs"
