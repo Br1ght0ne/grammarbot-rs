@@ -1,0 +1,24 @@
+[package]
+name = "grammarbot"
+version = "0.1.0"
+description = "API bindings for grammarbot.io"
+authors = ["Oleksii Filonenko <brightone@protonmail.com>"]
+homepage = "https://github.com/filalex77/grammarbot-rs"
+documentation = "https://docs.rs/grammarbot"
+repository = "https://github.com/filalex77/grammarbot-rs"
+readme = "README.md"
+keywords = ["grammarbot", "grammar", "spelling", "checker"]
+categories = ["api-bindings"]
+license = "MIT"
+edition = "2018"
+
+[badges]
+circle-ci = { repository = "filalex77/grammarbot-rs" }
+is-it-maintained-issue-resolution = { repository = "filalex77/grammarbot-rs" }
+is-it-maintained-open-issues = { repository = "filalex77/grammarbot-rs" }
+maintenance = {status = "actively-developed"}
+
+[dependencies]
+reqwest = "0.9.19"
+serde = { version = "1.0.98", features = ["derive"] }
+snafu = "0.4.4"
