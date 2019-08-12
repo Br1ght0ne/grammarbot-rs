@@ -17,8 +17,7 @@ jobs:
 
       - restore_cache:
           keys:
-            - v1-target-{{ checksum "Cargo.lock" }}
-            - v1-target-
+            - v1-target
 
       - run:
           name: Format
@@ -37,7 +36,7 @@ jobs:
           command: "RUST_BACKTRACE=1 cargo test"
 
       - save_cache:
-          key: v1-target-{{ checksum "Cargo.lock" }}
+          key: v1-target
           paths:
             - "~/.cargo"
             - "./target"
