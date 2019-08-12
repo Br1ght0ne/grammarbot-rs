@@ -25,8 +25,9 @@
 //! ```no_run
 //! # use grammarbot::Client;
 //! # let client = Client::new("your_api_key");
-//! # let response = client.check("I can't remember how to go their.");
+//! # let response = client.check("I can't remember how to go their.")?;
 //! assert_eq!("CONFUSION_RULE", response.matches[0].rule.id);
+//! # Ok::<(), grammarbot::Error>(())
 //! ```
 
 extern crate reqwest;
@@ -171,7 +172,7 @@ impl Client {
 
     /// Set the API key for the client.
     ///
-    /// ```
+    /// ```no_run
     /// # use grammarbot::Client;
     /// # let api_key = "test";
     /// # let other_api_key = "test2";
@@ -184,7 +185,7 @@ impl Client {
 
     /// Set the language for the client.
     ///
-    /// ```
+    /// ```no_run
     /// # use grammarbot::Client;
     /// # let api_key = "test";
     /// let client = Client::new(api_key).language("en-UK");
@@ -196,10 +197,10 @@ impl Client {
 
     /// Set the base URL for the client.
     ///
-    /// ```
+    /// ```no_run
     /// # use grammarbot::Client;
     /// # let api_key = "test";
-    /// let client = Client::new(api_key).base_url("http://pro.grammarbot.io");
+    /// let client = Client::new(api_key).base("http://pro.grammarbot.io");
     /// ```
     pub fn base(&mut self, base: &str) -> Result<&mut Self> {
         self.base = reqwest::Url::parse(base).context(InvalidUrl)?;
