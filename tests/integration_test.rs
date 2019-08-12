@@ -1,5 +1,5 @@
 extern crate grammarbot;
-use grammarbot::{Client, Match, Result};
+use grammarbot::{types::Match, Client, Result};
 
 #[test]
 fn test_check() -> Result<()> {
